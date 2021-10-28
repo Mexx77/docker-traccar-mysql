@@ -2,7 +2,7 @@ version: '2'
 services: 
 
  mysql:
-  image: mysql/mysql-server
+  image: hypriot/rpi-mysql
   restart: always
   hostname: mysql
   environment:
@@ -12,7 +12,7 @@ services:
    - ./conf/mysql.sql:/docker-entrypoint-initdb.d/mysql.sql
 
  traccar:
-  image: traccar/traccar:4-debian
+  image: traccar/traccar:4-ubuntu
   hostname: traccar
   restart: always
   ports:
